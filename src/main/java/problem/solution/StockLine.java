@@ -1,8 +1,6 @@
-import sun.jvmstat.monitor.Monitor;
+package problem.solution;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Random;
 
 /**
  * @Author: wangpeng

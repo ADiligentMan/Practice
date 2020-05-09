@@ -1,3 +1,5 @@
+package problem.solution;
+
 import java.util.Scanner;
 
 /**
