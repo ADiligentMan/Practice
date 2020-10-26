@@ -10,31 +10,17 @@ package problem.solution; /**
  *     ListNode(int x) { val = x; }
  * }
  */
-import java.util.*;
-public class ReverserLinkedList {
+public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
-        List<ListNode> list = new ArrayList<>();
-        //store into arraylist
-        ListNode it = head ;
-        while(it != null){
-            list.add(it);
-            ListNode listNode = it.next;
-            it.next = null;
-            it = listNode;
-
-
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null){
+            ListNode tempNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = tempNode;
         }
-
-        //read from list reversely
-        int size = list.size();
-        head = list.get(--size);
-        it = head ;
-        for(int i = --size ; i > -1 ;i-- ){
-            it .next = list.get(i);
-            it = it.next;
-        }
-
-        return head;
+        return  prev;
     }
 
     public static   void  printLinkedList(ListNode head){
@@ -54,7 +40,7 @@ public class ReverserLinkedList {
             it = it.next;
         }
         printLinkedList(head);
-        head = new ReverserLinkedList().reverseList(head);
+        head = new ReverseLinkedList().reverseList(head);
         printLinkedList(head);
     }
 }

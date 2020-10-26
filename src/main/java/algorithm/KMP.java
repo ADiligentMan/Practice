@@ -1,5 +1,7 @@
 package algorithm;
 
+import java.util.Arrays;
+
 /**
  * @Author: wangpeng
  * @Date: 2020-05-09 12:59
@@ -77,11 +79,12 @@ public class KMP {
 
     /**
      * calculate how many times p appears in s.
+     *
      * @return
      */
     int count() {
         int i = 0;
-        int j ;
+        int j;
         int sLength = s.length();
         int pLength = p.length();
         int number = 0;
@@ -90,6 +93,7 @@ public class KMP {
             while (i < sLength && j < pLength) {
                 if (j == -1 || s.charAt(i) == p.charAt(j)) {
                     i++;
+
                     j++;
 
                 } else {
@@ -98,16 +102,22 @@ public class KMP {
             }
 
             if (j == pLength) {
-                 number++;
+                number++;
             }
         } while (sLength - i > pLength);
 
         return number;
     }
 
+    public void printNext(){
+        System.out.println(Arrays.toString(next));
+    }
+
     public static void main(String[] args) {
-        String s = "sfewfewfwfeee";
-        String p = "wfe";
-        System.out.println(new KMP(s,p).count());
+        String s = "abcabcabcabcd";
+        String p = "abcabcabcd";
+        KMP kmp = new KMP(s, p);
+        kmp.printNext();
+        System.out.println(kmp.count());
     }
 }
