@@ -2,7 +2,7 @@ package problem.solution;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import problem.solution.RemoveNthFromEnd.ListNode;
+import problem.solution.model.ListNode;
 
 class RemoveNthFromEndTest {
     /**
@@ -47,10 +47,10 @@ class RemoveNthFromEndTest {
 
 
     private ListNode getHead() {
-        ListNode head = new RemoveNthFromEnd.ListNode(0);
+        ListNode head = new ListNode(0);
         ListNode tmpNode = head;
         for (int i = 1; i < 6; i++) {
-            tmpNode.next = new RemoveNthFromEnd.ListNode(i);
+            tmpNode.next = new ListNode(i);
             tmpNode = tmpNode.next;
         }
         return head;
@@ -59,7 +59,7 @@ class RemoveNthFromEndTest {
     private boolean validate(ListNode head, int nodeNotContained) {
         ListNode tmpNode = head;
         while (tmpNode != null) {
-            if(tmpNode.val == nodeNotContained){
+            if(tmpNode.value == nodeNotContained){
                 return false;
             }
             tmpNode = tmpNode.next;

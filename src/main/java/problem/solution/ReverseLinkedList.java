@@ -2,6 +2,9 @@ package problem.solution; /**
  * @Author: wangpeng
  * @Date: 2020-03-02 09:44
  */
+
+import problem.solution.model.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -26,7 +29,7 @@ public class ReverseLinkedList {
     public static   void  printLinkedList(ListNode head){
         ListNode it = head;
         while(null != it ){
-            System.out.print(it.val+",");
+            System.out.print(it.value +",");
             it = it.next;
         }
         System.out.println();
@@ -45,8 +48,3 @@ public class ReverseLinkedList {
     }
 }
 
-class ListNode {
-     int val;
-     ListNode next;
-     ListNode(int x) { val = x; }
-}

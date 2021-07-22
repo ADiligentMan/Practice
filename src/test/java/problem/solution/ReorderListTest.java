@@ -2,6 +2,7 @@ package problem.solution;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import problem.solution.model.ListNode;
 
 class ReorderListTest {
 
@@ -11,10 +12,10 @@ class ReorderListTest {
     @Test
     void reorderList1() {
         ReorderList reorderListTest = new ReorderList();
-        ReorderList.ListNode head = new ReorderList.ListNode(1);
-        ReorderList.ListNode tmpNode = head;
+        ListNode head = new ListNode(1);
+        ListNode tmpNode = head;
         for (int i = 2; i < 5; i++) {
-            tmpNode.next = new ReorderList.ListNode(i);
+            tmpNode.next = new ListNode(i);
             tmpNode = tmpNode.next;
         }
 
@@ -23,7 +24,7 @@ class ReorderListTest {
         tmpNode = head;
         int[] resultArr = {1, 4, 2, 3};
         for (int i = 0; i < 4; i++) {
-            if (tmpNode.val != resultArr[i]){
+            if (tmpNode.value != resultArr[i]){
                 result = false;
                 break;
             }
@@ -39,10 +40,10 @@ class ReorderListTest {
     @Test
     void reorderList2() {
         ReorderList reorderListTest = new ReorderList();
-        ReorderList.ListNode head = new ReorderList.ListNode(1);
-        ReorderList.ListNode tmpNode = head;
+        ListNode head = new ListNode(1);
+        ListNode tmpNode = head;
         for (int i = 2; i < 6; i++) {
-            tmpNode.next = new ReorderList.ListNode(i);
+            tmpNode.next = new ListNode(i);
             tmpNode = tmpNode.next;
         }
 
@@ -51,7 +52,7 @@ class ReorderListTest {
         tmpNode = head;
         int[] resultArr = {1,5,2,4,3};
         for (int i = 0; i < 5; i++) {
-            if (tmpNode.val != resultArr[i]){
+            if (tmpNode.value != resultArr[i]){
                 result = false;
                 break;
             }
